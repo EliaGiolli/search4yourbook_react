@@ -1,29 +1,21 @@
 import React from 'react'
 import axios from 'axios';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 function SearchBookDiv() {
-  //useState renders better if we put all the data inside an object
-  const [book, setBook] = useState({
-    "title": "",
-    "authorName": "",
-    "publishYear": null,
-    "subject": "",
-    "publisher": ""
-  });
-  //This is the state to handle the initial state of the search
+  const [books, setBooks] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");  
 
   const fetchBook = async () => {
     try {
       const response = await axios.get(`https://openlibrary.org/search.json?q=${searchTerm}`);
-      setBook(response.data);
-      console.log(response);
+      setBooks(response.data.docs);
+      console.log(response.data.docs);
     } catch(error) {
       console.error("An error occurred:", error);  
     }
   };
-  //when the user digits his/her query, the updated state is stored in the setSearchTerm function. It sinchronizes the state IRL
+
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -46,6 +38,21 @@ function SearchBookDiv() {
           Search
         </button>
       </div>
+      {books.length > 0 && (
+          <div className='bg-orange-600 h-auto w-full p-4 flex flex-col justify-evenly items-center text-center mt-5
+          rounded-lg shadow-md shadow-slate-800'>
+            <ul>
+              {books.map(book => (
+                <li key={book.key} className="mb-4 p-2 border-b border-white text-white">
+                  <h3 className="font-bold">{book.title}</h3>
+                  <p>Author: {book.author_name ? book.author_name.join(', ') : 'Unknown'}</p>
+                  <p>Year: {book.first_publish_year || 'Unknown'}</p>
+                  <p>Subject: {book.subject ? book.subject[0] : 'Not specified'}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
     </div>
   )
 }
