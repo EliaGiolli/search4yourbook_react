@@ -1,4 +1,3 @@
-import React from 'react'
 import { Route, Routes } from 'react-router'
 import SearchBookDiv from '../components/features/searchBookDiv'
 import About from './About'
