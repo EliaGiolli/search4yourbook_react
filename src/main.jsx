@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './pages/App'
 import './index.css'
 
-//TS needs a control to prevent the root element to be null
+const rootElement = document.getElementById('root')
 const root = ReactDOM.createRoot(rootElement)
 
 root.render(
