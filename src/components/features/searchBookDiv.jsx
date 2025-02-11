@@ -3,16 +3,8 @@ import axios from 'axios';
 import { useState } from 'react'
 
 // Aggiungi questa interfaccia all'inizio del file
-interface Book {
-  key: string;
-  title: string;
-  author_name?: string[];
-  first_publish_year?: number;
-  subject?: string[];
-}
-
 function SearchBookDiv() {
-  const [books, setBooks] = useState<Book[]>([]);
+  const [books, setBooks] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");  
 
   const fetchBook = async () => {
@@ -25,7 +17,7 @@ function SearchBookDiv() {
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
 

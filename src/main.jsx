@@ -5,8 +5,6 @@ import App from './pages/App'
 import './index.css'
 
 //TS needs a control to prevent the root element to be null
-const rootElement = document.getElementById('root')
-if (!rootElement) throw new Error('Failed to find the root element')
 const root = ReactDOM.createRoot(rootElement)
 
 root.render(
