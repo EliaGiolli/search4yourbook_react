@@ -60,14 +60,7 @@ Ecco alcuni comandi Git utili per gestire il progetto:
   ```sh
   git pull origin main
   ```
-
----
-
-## 📷 Screenshot
-Aggiungi qui degli screenshot della tua app!
-
----
-
+  
 ## 📖 API Utilizzata
 L'app si connette all'API **OpenAILibrary**, che fornisce dati sui libri in formato JSON.
 
@@ -120,6 +113,6 @@ Questo progetto è rilasciato sotto la licenza MIT.
 
 ## 👨‍💻 Autore
 **Il tuo nome o username GitHub**
-- GitHub: [@tuo-username](https://github.com/tuo-username)
-- LinkedIn: [Il tuo profilo](https://www.linkedin.com/in/tuo-profilo/)
+- GitHub: [@tuo-username](https://github.com/EliaGiolli)
+- LinkedIn: [Il tuo profilo](https://www.linkedin.com/in/eliagiolli/)
 
