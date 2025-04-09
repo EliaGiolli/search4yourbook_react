@@ -1,3 +1,6 @@
+# ATTUALMENTE SOTTO RIFATTORIZZAZIONE CON TYPESCRIPT
+
+
 # 📚 Search4YourBook
 
 Search4YourBook è un'applicazione web che consuma l'API esterna di **OpenAILibrary** per mostrare un elenco di libri in base al genere selezionato dall'utente. L'app è sviluppata con **React**, **React Router v7** e **Tailwind CSS**.
